@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+$font-size-base: 14px;
+$box-bg-color: hsl(227, 47%, 96%);
+$darker-text: hsl(230, 17%, 14%);
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: $font-size-base;
+    color: $darker-text;
+}
+
+body {
+    min-height: 100vh;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+header {
+    margin: 20px;
+    width: 100%;
+    .page-title {
+        padding: 20px 0;
+    }
+    .mode {
+        padding: 20px 0;
+    }
+}
+.follow-boxes,
+.today-overview {
+    width: 100%;
+}
+
+//mobile only configuration
+@media only screen and (max-width: 768px) {
+    .page-title {
+        border-bottom: 1px solid gray;
+    }
+    .container {
+        width: 90%;
+    }
+    .box {
+        width: 100%;
+    }
+}
+
+//dark mode slider and label
+.mode {
+    display: flex;
+    justify-content: space-between;
+    h3 {
+        float: left;
+    }
+    input {
+        float: right;
+    }
+}
+
+//information boxes
+.box {
+    border-radius: 5px;
+    margin: 20px;
+    background-color: $box-bg-color;
+    text-align: center;
+    justify-content: center;
+    padding: 1em;
+    .number {
+        font-weight: 700;
+    }
+}
+
+//specific for boxes of today's information
+.box-today {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .number {
+        font-size: 2rem;
+    }
+}
+
+.col-left {
+    float: left;
+    text-align: left;
+}
+
+.col-right{
+    float: right;
+    text-align: right;
+}
+
+// main boxes
+.box-follow {
+    .number {
+        font-size: 3rem;
+    }
+}
+
+.under {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.attribution {
+    font-size: 9px;
+    text-align: center;
+    a {
+        font-size: 9px;
+    }
+}
