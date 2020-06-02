@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 * {
-  margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Inter', sans-serif;
@@ -9,6 +8,7 @@
 }
 
 body {
+  margin: 0 auto;
   min-height: 100vh;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -19,33 +19,25 @@ h1 {
   font-size: 24px;
 }
 
-header {
-  margin: 20px;
-  width: 100%;
-}
-
 header .page-title {
-  padding: 20px 0;
+  padding-bottom: 20px;
 }
 
 header .mode {
   padding: 20px 0;
 }
 
-.follow-boxes,
-.today-overview {
+.container {
   width: 100%;
+  padding: 8%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media only screen and (max-width: 768px) {
   .page-title {
     border-bottom: 1px solid gray;
-  }
-  .container {
-    width: 90%;
-  }
-  .box {
-    width: 100%;
   }
 }
 
@@ -56,6 +48,9 @@ header .mode {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .mode h3 {
@@ -64,21 +59,29 @@ header .mode {
 
 .mode input {
   float: right;
+  cursor: pointer;
 }
 
 .box {
   border-radius: 5px;
-  margin: 20px;
+  margin-bottom: 20px;
   background-color: #f0f2fa;
   text-align: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   padding: 1em;
+  min-height: 150px;
 }
 
 .box .number {
   font-weight: 700;
+  margin: 0;
+}
+
+.box .today,
+.box h3 {
+  margin: 0;
 }
 
 .box-today {
@@ -92,6 +95,7 @@ header .mode {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 2em;
 }
 
 .box-today .number {
@@ -99,22 +103,47 @@ header .mode {
 }
 
 .col-left {
+  min-height: 100%;
   float: left;
   text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .col-right {
+  min-height: 100%;
   float: right;
   text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .box-follow .number {
+  font-weight: 700;
   font-size: 3rem;
+  letter-spacing: -0.05em;
 }
 
-.under {
+.box-follow .under {
   text-transform: uppercase;
   letter-spacing: 0.2em;
+  margin: 0;
 }
 
 .attribution {
@@ -124,5 +153,65 @@ header .mode {
 
 .attribution a {
   font-size: 9px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background-color: #aeb3cb;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-image: -webkit-gradient(linear, left top, right top, from(#378fe6), to(#3eda82));
+  background-image: linear-gradient(to right, #378fe6, #3eda82);
+}
+
+input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #2196F3;
+          box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(24px);
+          transform: translateX(24px);
+}
+
+.slider {
+  border-radius: 34px;
+}
+
+.slider:before {
+  border-radius: 50%;
 }
 /*# sourceMappingURL=main.css.map */
