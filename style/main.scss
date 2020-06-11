@@ -182,3 +182,9 @@ input:checked + .slider:before {
 .slider:before {
     border-radius: 50%;
 }
+
+img {
+    width: 24px;
+    height: 24px;
+    align-self: flex-end;
+}

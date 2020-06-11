@@ -214,4 +214,11 @@ input:checked + .slider:before {
 .slider:before {
   border-radius: 50%;
 }
+
+img {
+  width: 24px;
+  height: 24px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
 /*# sourceMappingURL=main.css.map */
