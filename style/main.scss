@@ -1,52 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-$font-size-base: 14px;
-$box-bg-color: hsl(227, 47%, 96%);
-$darker-text: hsl(230, 17%, 14%);
-@mixin column($side) {
-    min-height: 100%;
-    float: $side;
-    text-align: $side;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+@import './_partial'; //variables and mixins
+@import './_screens'; //responsive adjustments
+@import './_slider'; //toggle dark mode
 
 * {
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
     font-size: $font-size-base;
-    color: $darker-text;
-}
-
-body {
-    margin: 0 auto;
-    min-height: 100vh;
-    justify-content: center;
 }
 
 h1 {
     font-size: 24px;
 }
 
+h1,
+.number {
+    color: $bigger-text;
+}
+
+h3, h4
+.under {
+    color: $smaller-text;
+}
+
+body,
+.container {
+    margin: 0 auto;  
+    justify-content: center;
+    background-color: $bg-main;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    padding: 8%;
+}
+
+//Header
 header {
     .page-title {
         padding-bottom: 20px;
     }
     .mode {
         padding: 20px 0;
-    }
-}
-
-.container {
-    width: 100%;
-    padding: 8%;
-    justify-content: center;
-}
-
-//mobile only configuration
-@media only screen and (max-width: 768px) {
-    .page-title {
-        border-bottom: 1px solid gray;
     }
 }
 
@@ -68,7 +64,7 @@ header {
 .box {
     border-radius: 5px;
     margin-bottom: 20px;
-    background-color: $box-bg-color;
+    background-color: $card-bg;
     text-align: center;
     justify-content: center;
     padding: 1em;
@@ -80,6 +76,14 @@ header {
     .today,
     h3 {
         margin: 0;
+        font-weight: bold;
+        font-size: 0.8rem;
+    }
+    .pos {
+        color: $lime-green;
+    }
+    .neg {
+        color: $bright-red;
     }
 }
 
@@ -116,75 +120,25 @@ header {
     }
 }
 
-.attribution {
-    font-size: 9px;
-    text-align: center;
-    a {
-        font-size: 9px;
-    }
-}
-
-//slider switch
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 26px;
-    input {
-        //hides original checkbox
-        opacity: 0;
-        height: 0;
-        width: 0;
-    }
-}
-
-.slider {
-    //slider bg
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    cursor: pointer;
-    background-color: hsl(230, 22%, 74%);
-    transition: .3s;
-  }
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: .4s;
-}
-
-//round edges outside
-input:checked + .slider {
-    background-image: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
-}
-
-//slider circle
-input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-    transform: translateX(24px);
-}
-
-.slider {
-    border-radius:34px;
-}
-
-.slider:before {
-    border-radius: 50%;
-}
-
+//Social Media logos
 img {
     width: 24px;
     height: 24px;
     align-self: flex-end;
+}
+
+//Dark Mode
+.dark {
+    background-color: $dark-bg-main;
+    h1,
+    .number {
+        color: $dark-bigger-text;
+    }
+    h3, h4,
+    .under {
+        color: $dark-smaller-text;
+    }
+    .box {
+        background-color: $dark-card-bg;
+    }
 }

@@ -22,37 +22,37 @@
 			<div class="mode">
 				<h3>Dark Mode</h3>
 				<label class="switch">
-					<input type="checkbox">
+					<input type="checkbox" name="theme">
 					<span class="slider"></span>
 				</label>
 			</div>
 		</header>
 		<!-- main boxes, with global follower number -->
 		<section class="follow-boxes">
-			<div class="box box-follow">
+			<div class="box box-follow" id="facebook-followers">
 				<h4>@nathanf</h4>
 				<p class="number">1987</p>
 				<p class="under">Followers</p>
-				<p class="today">12 Today</p>
+				<p class="today pos">12 Today</p>
 			</div>
-			<div class="box box-follow">
+			<div class="box box-follow" id="twitter-followers">
 				<h4>@nathanf</h4>
 				<p class="number">1044</p>
 				<p class="under">Followers</p>
-				<p class="today">99 Today</p>
+				<p class="today pos">99 Today</p>
 			</div>
-			<div class="box box-follow">
+			<div class="box box-follow" id="instagram-followers">
 				<h4>@realnathanf</h4>
 				<p class="number">11k</p>
 				</p>
 				<p class="under">Followers</p>
-				<p class="today">1099 Today</p>
+				<p class="today pos">1099 Today</p>
 			</div>
-			<div class="box box-follow">
+			<div class="box box-follow" id="youtube-subscribers">
 				<h4>Nathan F.</h4>
 				<p class="number">8239</p>
 				<p class="under">Subscribers</p>
-				<p class="today">144 Today</p>
+				<p class="today neg">144 Today</p>
 			</div>
 		</section>
 		<!-- Overview - today -->
@@ -65,7 +65,7 @@
 				</div>
 				<div class="col-right">
 					<img src="./images/icon-facebook.svg" alt="facebook icon">
-					<p class="today">3%</p>
+					<p class="today pos">3%</p>
 				</div>
 			</div>
 			<div class="box box-today">
@@ -75,7 +75,7 @@
 				</div>
 				<div class="col-right">
 					<img src="./images/icon-facebook.svg" alt="facebook icon">
-					<p class="today">2%</p>
+					<p class="today neg">2%</p>
 				</div>
 			</div>
 			<div class="box box-today">
@@ -85,7 +85,7 @@
 				</div>
 				<div class="col-right">
 					<img src="./images/icon-instagram.svg" alt="instagram icon">
-					<p class="today">2257%</p>
+					<p class="today pos">2257%</p>
 				</div>
 			</div>
 			<div class="box box-today">
@@ -95,7 +95,7 @@
 				</div>
 				<div class="col-right">
 					<img src="./images/icon-instagram.svg" alt="instagram icon">
-					<p class="today">1375%</p>
+					<p class="today pos">1375%</p>
 				</div>
 			</div>
 			<div class="box box-today">
@@ -105,7 +105,7 @@
 				</div>
 				<div class="col-right">
 					<img src="./images/icon-twitter.svg" alt="twitter icon">
-					<p class="today">303%</p>
+					<p class="today pos">303%</p>
 				</div>
 			</div>
 			<div class="box box-today">
@@ -115,7 +115,7 @@
 				</div>
 				<div class="col-right">
 					<img src="./images/icon-twitter.svg" alt="twitter icon">
-					<p class="today">553%</p>
+					<p class="today pos">553%</p>
 				</div>
 			</div>
 			<div class="box box-today">
@@ -125,7 +125,7 @@
 				</div>
 				<div class="col-right">
 					<img src="/images/icon-youtube.svg" alt="youtube icon">
-					<p class="today">19%</p>
+					<p class="today neg">19%</p>
 				</div>
 			</div>
 			<div class="box box-today">
@@ -135,15 +135,12 @@
 				</div>
 				<div class="col-right">
 					<img src="/images/icon-youtube.svg" alt="youtube icon">
-					<p class="today">12%</p>
+					<p class="today neg">12%</p>
 				</div>
 			</div>
 		</section>
-		<div class="attribution">
-			Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-			Coded by <a href="#">Beatriz Cavallieri</a>.
-		</div>
 	</div>
+	<script src="script.js"></script>
 </body>
 
 </html>

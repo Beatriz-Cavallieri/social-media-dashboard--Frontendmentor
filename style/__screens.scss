@@ -1,0 +1,6 @@
+//mobile only configuration
+@media only screen and (max-width: 768px) {
+    .page-title {
+        border-bottom: 1px solid $toggle-gray;
+    }
+}

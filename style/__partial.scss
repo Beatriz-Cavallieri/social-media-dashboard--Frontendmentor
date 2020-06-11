@@ -1,0 +1,56 @@
+$font-size-base: 14px;
+
+//Details
+$lime-green: hsl(163, 72%, 41%);
+$bright-red: hsl(356, 69%, 56%);
+$facebook: hsl(208, 92%, 53%);
+$twitter: hsl(203, 89%, 53%);
+$instagram-yellow: hsl(37, 97%, 70%);
+$instagram-pink: hsl(329, 70%, 58%);
+$youtube: hsl(348, 97%, 39%);
+
+//Toggle slider colors
+$toggle-blue: hsl(210, 78%, 56%);
+$toggle-green: hsl(146, 68%, 55%);
+$toggle-gray: hsl(230, 22%, 74%);
+
+//Light Theme
+$bg-top: hsl(225, 100%, 98%);
+$bg-main: hsl(0, 0%, 100%);
+$card-bg: hsl(227, 47%, 96%);
+$smaller-text: hsl(228, 12%, 44%);
+$bigger-text: hsl(230, 17%, 14%);
+
+//Dark Theme
+// $bg-top: hsl(232, 19%, 15%);
+// $bg-main: hsl(230, 17%, 14%);
+// $bg-top: hsl(232, 19%, 15%);
+// $card-bg: hsl(228, 28%, 20%);
+// $smaller-text: hsl(228, 34%, 66%);
+// $bigger-text: hsl(0, 0%, 100%);
+$dark-bg-top: hsl(232, 19%, 15%);
+$dark-bg-main: hsl(230, 17%, 14%);
+$dark-bg-top: hsl(232, 19%, 15%);
+$dark-card-bg: hsl(228, 28%, 20%);
+$dark-smaller-text: hsl(228, 34%, 66%);
+$dark-bigger-text: hsl(0, 0%, 100%);
+
+
+@mixin column($side) {
+    min-height: 100%;
+    float: $side;
+    text-align: $side;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@mixin darkTheme($dark-theme: true) {
+    @if $dark-theme {
+    //fazer dark theme
+        body {
+            background-color: black;
+        }
+    }
+    
+}
