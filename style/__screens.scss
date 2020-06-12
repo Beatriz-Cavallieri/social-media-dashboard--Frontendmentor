@@ -1,11 +1,11 @@
 //mobile only configuration
 @media only screen and (max-width: 768px) {
     .page-title {
-        border-bottom: 1px solid $toggle-gray;
+        border-bottom: 1px solid hsl(228, 12%, 44%);
     }
 }
 
-// tablet
+// Tablet layout
 @media only screen and (min-width: 768px) {
     .follow-boxes,
     .today-overview {
@@ -13,14 +13,19 @@
         grid-template-columns: 1fr 1fr;
         grid-gap: 24px;
     }
+    header {
+        display: flex;
+        justify-content: space-between;
+        .mode h3 {
+            margin-right: 10px;
+        }
+    }
 }
 
-//desktop
+// Desktop layout
 @media only screen and (min-width: 1024px) {
     .follow-boxes,
     .today-overview {
-        display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-gap: 24px;
     }
 }

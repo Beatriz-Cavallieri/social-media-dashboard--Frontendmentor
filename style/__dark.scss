@@ -1,0 +1,26 @@
+//Dark Theme
+$dark-bg-top: hsl(232, 19%, 15%);
+$dark-bg-main: hsl(230, 17%, 14%);
+$dark-bg-top: hsl(232, 19%, 15%);
+$dark-card-bg: hsl(228, 28%, 20%);
+$dark-smaller-text: hsl(228, 34%, 66%);
+$dark-bigger-text: hsl(0, 0%, 100%);
+
+//Dark Mode
+.dark {
+    background-color: $dark-bg-main;
+    h1,
+    .number {
+        color: $dark-bigger-text;
+    }
+    h2, h3, h4,
+    .under {
+        color: $dark-smaller-text;
+    }
+    .box {
+        background-color: $dark-card-bg;
+        &:hover {
+            background-color: darken($dark-smaller-text, 30);
+        }
+    }      
+}

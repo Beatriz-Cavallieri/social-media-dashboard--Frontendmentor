@@ -2,6 +2,7 @@
 @import './_partial'; //variables and mixins
 @import './_screens'; //responsive adjustments
 @import './_slider'; //toggle dark mode
+@import './_dark'; //dark mode colors
 
 * {
     box-sizing: border-box;
@@ -18,7 +19,11 @@ h1,
     color: $bigger-text;
 }
 
-h3, h4
+h2 {
+    font-size: 20px;
+}
+
+h2, h3, h4
 .under {
     color: $smaller-text;
 }
@@ -33,16 +38,17 @@ body,
 .container {
     min-height: 100vh;
     width: 100%;
-    padding: 8%;
+    padding: 20px 8%;
 }
 
 //Header
 header {
-    .page-title {
-        padding-bottom: 20px;
-    }
+    .page-title,
     .mode {
-        padding: 20px 0;
+        padding: 40px 0;
+    }
+    h1, h3 {
+        margin: 0;
     }
 }
 
@@ -57,6 +63,13 @@ header {
     input {
         float: right;
         cursor: pointer;
+    }
+}
+
+li.box {
+    list-style: none;
+    &:hover {
+        background-color: lighten($hover, 20);
     }
 }
 
@@ -84,6 +97,15 @@ header {
     }
     .neg {
         color: $bright-red;
+    }
+    .profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            align-self: center;
+            margin-right: 5px;
+        }
     }
 }
 
@@ -116,14 +138,19 @@ header {
     .under {
         text-transform: uppercase;
         letter-spacing: 0.2em;
-        margin: 0;
+        margin: 0 0 20px 0;
+    }
+    .under,
+    h4 {
+        color: $smaller-text;
+        font-size: 12px;
     }
 }
 
 //Social Media logos
 img {
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     align-self: flex-end;
 }
 
