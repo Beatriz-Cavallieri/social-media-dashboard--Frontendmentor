@@ -4,3 +4,23 @@
         border-bottom: 1px solid $toggle-gray;
     }
 }
+
+// tablet
+@media only screen and (min-width: 768px) {
+    .follow-boxes,
+    .today-overview {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 24px;
+    }
+}
+
+//desktop
+@media only screen and (min-width: 1024px) {
+    .follow-boxes,
+    .today-overview {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 24px;
+    }
+}

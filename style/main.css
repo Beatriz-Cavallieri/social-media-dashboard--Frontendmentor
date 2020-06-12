@@ -5,6 +5,28 @@
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .follow-boxes,
+  .today-overview {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-gap: 24px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .follow-boxes,
+  .today-overview {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 24px;
+  }
+}
+
 .switch {
   position: relative;
   display: inline-block;
