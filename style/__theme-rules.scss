@@ -1,0 +1,56 @@
+@import './_theme-colors';
+
+//background - in progress - only in default light mode
+.container::before {
+    content: "";
+    background-color: $bg-top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 100%;
+    z-index: -1;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}  
+
+h1,
+.number {
+    color: $bigger-text;
+}
+
+h2, h3, h4
+.under {
+    color: $smaller-text;
+}
+
+.box {
+    background-color: $card-bg;
+}
+
+//dark theme
+.dark {
+    &.container {
+        background-color: $dark-bg-main;
+    } 
+    &.container::before {
+        background-color: red;
+    }   
+    h1,
+    .number {
+        color: $dark-bigger-text;
+    }
+    h2, h3, h4,
+    .under {
+        color: $dark-smaller-text;
+    }
+    .box {
+        background-color: $dark-card-bg;
+        &:hover {
+            background-color: darken($dark-smaller-text, 30);
+        }
+    }    
+}
+
+
+

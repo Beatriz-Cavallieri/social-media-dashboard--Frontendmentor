@@ -1,6 +1,14 @@
+//positive and negative indicators
 $lime-green: hsl(163, 72%, 41%);
 $bright-red: hsl(356, 69%, 56%);
+//card color: hover (default theme)
 $hover: hsl(228, 34%, 66%);
+//social media colors
+$facebook: hsl(208, 92%, 53%);
+$twitter: hsl(203, 89%, 53%);
+$instagram-yellow: hsl(37, 97%, 70%);
+$instagram-pink: hsl(329, 70%, 58%);
+$youtube: hsl(348, 97%, 39%);
 
 @mixin column($side) {
     min-height: 100%;
@@ -11,21 +19,41 @@ $hover: hsl(228, 34%, 66%);
     justify-content: space-between;
 }
 
+@mixin cardLine($color) {
+    content: "";
+    display: flex;
+    width: 100%;
+    height:4px;
+    position: relative;
+    top: -20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: $color;
+}
+
 //information boxes/cards
+li.box {
+    list-style: none;
+    cursor: pointer;
+    &:hover {
+        background-color: lighten($hover, 20);
+    }
+}
+// all cards
 .box {
     border-radius: 5px;
     margin-bottom: 20px;
     text-align: center;
     justify-content: center;
-    padding: 1em;
+    padding: 20px 0;
     min-height: 150px;
     .number {
-        font-weight: 700;
+        font-weight: bold;
         margin: 0;
     }
     .today,
     h3 {
-        margin: 0;
+        margin: 0 0 5px 0;
         font-weight: bold;
         font-size: 0.8rem;
     }
@@ -34,6 +62,23 @@ $hover: hsl(228, 34%, 66%);
     }
     .neg {
         color: $bright-red;
+    }
+}
+
+// main boxes
+.box-follow {
+    &.facebook::before {
+        @include cardLine($facebook);
+    }
+    &.twitter::before {
+        @include cardLine($twitter);
+    }
+    &.youtube::before {
+        @include cardLine($youtube);
+    }
+    &.instagram::before {
+        @include cardLine($instagram-yellow);
+        background-image: linear-gradient(to left, $instagram-pink, $instagram-yellow);
     }
     .profile {
         display: flex;
@@ -44,39 +89,7 @@ $hover: hsl(228, 34%, 66%);
             margin-right: 5px;
         }
     }
-}
-
-li.box {
-    list-style: none;
-    cursor: pointer;
-    &:hover {
-        background-color: lighten($hover, 20);
-    }
-}
-
-//specific for boxes of today's information
-.box-today {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 2em;
     .number {
-        font-size: 2rem;
-    }
-}
-
-.col-left {
-    @include column(left);
-}
-
-.col-right{
-    @include column(right);
-}
-
-// main boxes
-.box-follow {
-    .number {
-        font-weight: 700;
         font-size: 3rem;
         letter-spacing: -0.05em;
     }
@@ -89,4 +102,21 @@ li.box {
     h4 {
         font-size: 12px;
     }
+}
+
+//specific for boxes of today's information
+.box-today {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2em;
+    .number {
+        font-size: 2rem;
+    }
+    .col-left {
+        @include column(left);
+    }
+    .col-right{
+        @include column(right);
+    }   
 }

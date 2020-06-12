@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-@import './_partial'; //variables and mixins
 @import './_screens'; //responsive adjustments
-@import './_cards';
+@import './_cards'; //info boxes
 @import './_slider'; //toggle dark mode
-@import './_light'; //default mode colors
-@import './_dark'; //dark mode colors
+@import './_theme-colors';
+@import './_theme-rules';
 
 * {
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    font-size: $font-size-base;
+    font-size: 14px;
 }
 
 h1 {
