@@ -11,7 +11,7 @@ $instagram-pink: hsl(329, 70%, 58%);
 $youtube: hsl(348, 97%, 39%);
 
 @mixin column($side) {
-    min-height: 100%;
+    min-height: 110px;
     float: $side;
     text-align: $side;
     display: flex;
@@ -31,14 +31,17 @@ $youtube: hsl(348, 97%, 39%);
     background-color: $color;
 }
 
-//information boxes/cards
-li.box {
-    list-style: none;
+//information boxes/cards: button behavior
+button.box {
+    outline: none;
+    border: none;
+    transition: 0.4s;
     cursor: pointer;
     &:hover {
         background-color: lighten($hover, 20);
     }
 }
+
 // all cards
 .box {
     border-radius: 5px;
