@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 @import './_partial'; //variables and mixins
 @import './_screens'; //responsive adjustments
+@import './_cards';
 @import './_slider'; //toggle dark mode
+@import './_light'; //default mode colors
 @import './_dark'; //dark mode colors
 
 * {
@@ -14,25 +16,14 @@ h1 {
     font-size: 24px;
 }
 
-h1,
-.number {
-    color: $bigger-text;
-}
-
 h2 {
     font-size: 20px;
-}
-
-h2, h3, h4
-.under {
-    color: $smaller-text;
 }
 
 body,
 .container {
     margin: 0 auto;  
     justify-content: center;
-    background-color: $bg-main;
 }
 
 .container {
@@ -66,106 +57,9 @@ header {
     }
 }
 
-li.box {
-    list-style: none;
-    &:hover {
-        background-color: lighten($hover, 20);
-    }
-}
-
-//information boxes/cards
-.box {
-    border-radius: 5px;
-    margin-bottom: 20px;
-    background-color: $card-bg;
-    text-align: center;
-    justify-content: center;
-    padding: 1em;
-    min-height: 150px;
-    .number {
-        font-weight: 700;
-        margin: 0;
-    }
-    .today,
-    h3 {
-        margin: 0;
-        font-weight: bold;
-        font-size: 0.8rem;
-    }
-    .pos {
-        color: $lime-green;
-    }
-    .neg {
-        color: $bright-red;
-    }
-    .profile {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        img {
-            align-self: center;
-            margin-right: 5px;
-        }
-    }
-}
-
-//specific for boxes of today's information
-.box-today {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 2em;
-    .number {
-        font-size: 2rem;
-    }
-}
-
-.col-left {
-    @include column(left);
-}
-
-.col-right{
-    @include column(right);
-}
-
-// main boxes
-.box-follow {
-    .number {
-        font-weight: 700;
-        font-size: 3rem;
-        letter-spacing: -0.05em;
-    }
-    .under {
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-        margin: 0 0 20px 0;
-    }
-    .under,
-    h4 {
-        color: $smaller-text;
-        font-size: 12px;
-    }
-}
-
 //Social Media logos
 img {
     width: 16px;
     height: 16px;
     align-self: flex-end;
-}
-
-//Dark Mode
-.dark {
-    background-color: $dark-bg-main;
-    h1,
-    .number {
-        color: $dark-bigger-text;
-    }
-    h3, h4,
-    .under {
-        color: $dark-smaller-text;
-    }
-    .box {
-        background-color: $dark-card-bg;
-    }
 }

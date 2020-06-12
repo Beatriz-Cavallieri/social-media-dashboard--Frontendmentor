@@ -1,0 +1,92 @@
+$lime-green: hsl(163, 72%, 41%);
+$bright-red: hsl(356, 69%, 56%);
+$hover: hsl(228, 34%, 66%);
+
+@mixin column($side) {
+    min-height: 100%;
+    float: $side;
+    text-align: $side;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+//information boxes/cards
+.box {
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+    padding: 1em;
+    min-height: 150px;
+    .number {
+        font-weight: 700;
+        margin: 0;
+    }
+    .today,
+    h3 {
+        margin: 0;
+        font-weight: bold;
+        font-size: 0.8rem;
+    }
+    .pos {
+        color: $lime-green;
+    }
+    .neg {
+        color: $bright-red;
+    }
+    .profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            align-self: center;
+            margin-right: 5px;
+        }
+    }
+}
+
+li.box {
+    list-style: none;
+    cursor: pointer;
+    &:hover {
+        background-color: lighten($hover, 20);
+    }
+}
+
+//specific for boxes of today's information
+.box-today {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2em;
+    .number {
+        font-size: 2rem;
+    }
+}
+
+.col-left {
+    @include column(left);
+}
+
+.col-right{
+    @include column(right);
+}
+
+// main boxes
+.box-follow {
+    .number {
+        font-weight: 700;
+        font-size: 3rem;
+        letter-spacing: -0.05em;
+    }
+    .under {
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        margin: 0 0 20px 0;
+    }
+    .under,
+    h4 {
+        font-size: 12px;
+    }
+}

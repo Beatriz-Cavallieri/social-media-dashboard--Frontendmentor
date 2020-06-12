@@ -1,29 +1,9 @@
 $font-size-base: 14px;
 
 //Details
-$lime-green: hsl(163, 72%, 41%);
-$bright-red: hsl(356, 69%, 56%);
 $facebook: hsl(208, 92%, 53%);
 $twitter: hsl(203, 89%, 53%);
 $instagram-yellow: hsl(37, 97%, 70%);
 $instagram-pink: hsl(329, 70%, 58%);
 $youtube: hsl(348, 97%, 39%);
 
-//Light Theme
-$bg-top: hsl(225, 100%, 98%);
-$bg-main: hsl(0, 0%, 100%);
-$card-bg: hsl(227, 47%, 96%);
-$smaller-text: hsl(228, 12%, 44%);
-$bigger-text: hsl(230, 17%, 14%);
-
-//hover
-$hover: hsl(228, 34%, 66%);
-
-@mixin column($side) {
-    min-height: 100%;
-    float: $side;
-    text-align: $side;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}

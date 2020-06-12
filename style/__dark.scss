@@ -8,7 +8,9 @@ $dark-bigger-text: hsl(0, 0%, 100%);
 
 //Dark Mode
 .dark {
-    background-color: $dark-bg-main;
+    &.container {
+        background-color: $dark-bg-main;
+    }    
     h1,
     .number {
         color: $dark-bigger-text;

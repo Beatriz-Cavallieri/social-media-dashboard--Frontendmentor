@@ -1,0 +1,25 @@
+//Default Light Theme
+$bg-top: hsl(225, 100%, 98%);
+$bg-main: hsl(0, 0%, 100%);
+$card-bg: hsl(227, 47%, 96%);
+$smaller-text: hsl(228, 12%, 44%);
+$bigger-text: hsl(230, 17%, 14%);
+
+h1,
+.number {
+    color: $bigger-text;
+}
+
+h2, h3, h4
+.under {
+    color: $smaller-text;
+}
+
+body,
+.container {
+    background-color: $bg-main;
+}
+
+.box {
+    background-color: $card-bg;
+}
