@@ -1,0 +1,42 @@
+.page-title {
+        border-bottom: 1px solid hsl(228, 12%, 44%);
+    }
+
+@media only screen and (min-width: 768px) {
+    .page-title {
+        border-bottom: none;
+    }
+}
+
+.page-title,
+.mode {
+    padding: 40px 0;
+}
+
+h1, h3 {
+    margin: 0;
+}
+
+.mode {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mode h3 {
+    float: left;
+}
+.mode input {
+    float: right;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+    .mode h3 {
+            margin-right: 10px;
+        }
+}
