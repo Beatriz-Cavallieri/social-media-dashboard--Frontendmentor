@@ -1,11 +1,58 @@
 import React from 'react'
-import './style.css'
+import styled from 'styled-components'
 
-export default function Slider() {
+const SliderWrapper = styled.label`
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+    input {
+        opacity: 0;
+        height: 0;
+        width: 0;
+    }
+    span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        cursor: pointer;
+        background-color: var(--toggle-gray);
+        transition: .3s;
+        border-radius:34px;
+        &:before {
+            border-radius: 50%;
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+        }
+    }
+
+    /* round edges outside */
+    input:checked + span {
+        background-image: linear-gradient(to right, var(--toggle-blue), var(--toggle-green));
+    }
+
+    /* slider circle */
+    input:focus + span {
+        box-shadow: 0 0 3px hsl(210, 78%, 56%);
+    }
+
+    input:checked + span:before {
+        transform: translateX(24px);
+    }
+`
+export default function Slider({ getThemeHeader }) {
     return (
-        <label className="switch">
-            <input type="checkbox" name="theme" />
-            <span className="slider"></span>
-        </label>
+        <SliderWrapper>
+            <input type="checkbox" onClick={event => getThemeHeader(event.target.checked)} />
+            <span></span>
+        </SliderWrapper>
     )
 }
