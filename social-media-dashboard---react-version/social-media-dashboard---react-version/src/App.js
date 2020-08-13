@@ -13,6 +13,7 @@ function App() {
       <GlobalStyles />
       {/* permite que o filho Header altere o valor de isDarkTheme */}
       <Header getThemeApp={theme => setIsDarkTheme(theme)} />
+
     </ThemeProvider>
   )
 }
