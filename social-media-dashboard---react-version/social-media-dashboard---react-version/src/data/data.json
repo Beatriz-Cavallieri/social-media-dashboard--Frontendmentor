@@ -1,0 +1,31 @@
+[
+    {
+        "socialNetwork": "facebook",
+        "data": [
+            {
+                "identifier": "@nathanf",
+                "followers": [
+                    {
+                        "total": 1987,
+                        "growth": 99,
+                        "positive": true
+                    }
+                ],
+                "visibility": [
+                    {
+                        "total": 87,
+                        "growth": 3,
+                        "positive": true
+                    }
+                ],
+                "likes": [
+                    {
+                        "total": 52,
+                        "growth": 2,
+                        "positive": false
+                    }
+                ]
+            }
+        ]
+    }
+]
