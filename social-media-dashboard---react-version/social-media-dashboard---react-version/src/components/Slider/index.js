@@ -22,6 +22,7 @@ const SliderWrapper = styled.label`
         transition: .3s;
         border-radius:34px;
         &:before {
+            /* circle */
             border-radius: 50%;
             position: absolute;
             content: "";
@@ -29,23 +30,21 @@ const SliderWrapper = styled.label`
             width: 20px;
             left: 3px;
             bottom: 3px;
-            background-color: white;
+            background-color: ${({ theme }) => theme.background};
             transition: .4s;
         }
     }
 
-    /* round edges outside */
+    /* round edges outside + circle movement */
     input:checked + span {
         background-image: linear-gradient(to right, var(--toggle-blue), var(--toggle-green));
+        &:before {
+        transform: translateX(24px); 
+        }
     }
 
-    /* slider circle */
     input:focus + span {
         box-shadow: 0 0 3px hsl(210, 78%, 56%);
-    }
-
-    input:checked + span:before {
-        transform: translateX(24px);
     }
 `
 export default function Slider({ getThemeHeader }) {

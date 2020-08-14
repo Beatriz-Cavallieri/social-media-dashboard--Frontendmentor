@@ -13,6 +13,7 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
+    transition: 0.4s;
 }
 
 a {
@@ -21,10 +22,16 @@ a {
 
 h1 {
     font-size: 24px;
+    color: ${({ theme }) => theme.bigText};
 }
 
 h2 {
     font-size: 20px;
+}
+
+h2, h3, h4
+{
+    color: ${({ theme }) => theme.smallText};
 }
 
 body {
@@ -36,18 +43,17 @@ body {
     background: ${({ theme }) => theme.background};
 }
 
- 
-h1,
-.number {
-    color: ${({ theme }) => theme.bigText};
+img {
+    width: 16px;
+    height: 16px;
+    align-self: flex-end;
 }
 
-h2, h3, h4
-.under {
-    color: ${({ theme }) => theme.smallText};
-}
-
-.box {
-    background-color: ${({ theme }) => theme.card};
+/* Tablet */
+@media only screen and (min-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 `

@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme } from './themes'
 import { GlobalStyles } from './components/GlobalStyles/GlobalStyles'
 import './App.css'
+import FollowersSubscribersCard from './components/Cards/FollowersSubscribersCard'
 
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState('false')
@@ -13,7 +14,7 @@ function App() {
       <GlobalStyles />
       {/* permite que o filho Header altere o valor de isDarkTheme */}
       <Header getThemeApp={theme => setIsDarkTheme(theme)} />
-
+      <FollowersSubscribersCard />
     </ThemeProvider>
   )
 }
