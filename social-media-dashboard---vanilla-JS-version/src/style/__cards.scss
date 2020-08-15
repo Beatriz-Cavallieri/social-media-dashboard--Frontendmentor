@@ -60,7 +60,7 @@ button.box {
         font-weight: bold;
         font-size: 0.8rem;
     }
-    .pos {
+    .pos::before {
         color: $lime-green;
     }
     .neg {

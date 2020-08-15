@@ -19,7 +19,7 @@ const data = [
         "likes": [
             {
                 "total": 52,
-                "growth": 2,
+                "growth": 4,
                 "isGrowthPositive": false
             }
         ]
@@ -44,7 +44,7 @@ const data = [
         "likes": [
             {
                 "total": 52,
-                "growth": 2,
+                "growth": 1,
                 "isGrowthPositive": false
             }
         ]
@@ -62,7 +62,7 @@ const data = [
         "visibility": [
             {
                 "total": 87,
-                "growth": 3,
+                "growth": 4,
                 "isGrowthPositive": true
             }
         ],
@@ -81,13 +81,13 @@ const data = [
             {
                 "total": 1987,
                 "growth": 25,
-                "isGrowthPositive": true
+                "isGrowthPositive": false
             }
         ],
         "visibility": [
             {
                 "total": 87,
-                "growth": 3,
+                "growth": 12,
                 "isGrowthPositive": true
             }
         ],
@@ -95,7 +95,7 @@ const data = [
             {
                 "total": 52,
                 "growth": 2,
-                "isGrowthPositive": false
+                "isGrowthPositive": true
             }
         ]
     }
@@ -108,30 +108,35 @@ const dailyCards = document.querySelector('.today-overview')
 var checkbox = document.querySelector('input[name=theme]');
 var container = document.querySelector('.container');
 
-checkbox.addEventListener('change', () => {
-    setTheme(document.documentElement.getAttribute('data-theme'))
-});
+window.addEventListener('load', () => start())
 
-createCards()
+function start() {
+    checkbox.addEventListener('change', () => {
+        setTheme(document.documentElement.getAttribute('data-theme'))
+    });
 
-function setTheme(theme) {
-    switch (theme) {
+    createCards()
+}
+
+function setTheme(attribute) {
+    console.log(attribute)
+    switch (attribute) {
         case "dark":
-            document.documentElement.setAttribute('data-theme', 'dark');
-            container.classList.add('dark');
-            break;
-        default:
             document.documentElement.setAttribute('data-theme', 'default');
             container.classList.remove('dark');
+            break;
+        default:
+            document.documentElement.setAttribute('data-theme', 'dark');
+            container.classList.add('dark');
             break;
     }
 }
 
 function createCards() {
     const mainCardsHTML = createMainCardsHTML(data)
-    //const dailyCardsHTML = createDailyCardsHTML(data)
+    const dailyCardsHTML = createDailyCardsHTML(data)
     mainCards.innerHTML = mainCardsHTML
-    //dailyCards.innerHTML = dailyCardsHTML
+    dailyCards.innerHTML = dailyCardsHTML
 }
 
 function followersNumberFormat(number) {
@@ -164,3 +169,34 @@ function createMainCardsHTML(data) {
     return innerHTML
 }
 
+function createDailyCardsHTML() {
+    let innerHTML = ''
+    data.map(socialNetwork => {
+        const visibilityGrowthClass = socialNetwork.visibility[0].isGrowthPositive ? 'pos' : 'neg'
+        const likesGrowthClass = socialNetwork.likes[0].isGrowthPositive ? 'pos' : 'neg'
+        innerHTML += `
+			<button class="box box-today">
+				<div class="col-left">
+					<h3>Page Views</h3>
+					<p class="number">${socialNetwork.visibility[0].total}</p>
+				</div>
+				<div class="col-right">
+					<img src="../images/icon-${socialNetwork.name}.svg" alt="${socialNetwork.name} icon">
+					<p class="today ${visibilityGrowthClass}">${socialNetwork.visibility[0].growth}%</p>
+				</div>
+            </button>
+            
+            <button class="box box-today">
+				<div class="col-left">
+					<h3>Likes</h3>
+					<p class="number">${socialNetwork.likes[0].total}</p>
+				</div>
+				<div class="col-right">
+					<img src="../images/icon-${socialNetwork.name}.svg" alt="${socialNetwork.name} icon">
+					<p class="today ${likesGrowthClass}">${socialNetwork.likes[0].growth}%</p>
+				</div>
+			</button>
+        `
+    })
+    return innerHTML
+}
