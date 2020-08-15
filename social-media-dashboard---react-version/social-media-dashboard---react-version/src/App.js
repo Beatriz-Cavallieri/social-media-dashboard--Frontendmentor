@@ -3,8 +3,7 @@ import Header from './components/Header'
 import { ThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme } from './themes'
 import { GlobalStyles } from './components/GlobalStyles/GlobalStyles'
-import './App.css'
-import FollowersSubscribersCard from './components/Cards/FollowersSubscribersCard'
+import Main from './components/Main'
 
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState('false')
@@ -12,9 +11,9 @@ function App() {
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
-      {/* permite que o filho Header altere o valor de isDarkTheme */}
+      {/* passing this function as props allows the child component Header to chage the value of the isDarkTheme variable: */}
       <Header getThemeApp={theme => setIsDarkTheme(theme)} />
-      <FollowersSubscribersCard />
+      <Main />
     </ThemeProvider>
   )
 }

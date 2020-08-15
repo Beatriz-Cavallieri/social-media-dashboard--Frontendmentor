@@ -1,30 +1,101 @@
 [
     {
-        "socialNetwork": "facebook",
-        "data": [
+        "name": "facebook",
+        "identifier": "@nathanf",
+        "followers": [
             {
-                "identifier": "@nathanf",
-                "followers": [
-                    {
-                        "total": 1987,
-                        "growth": 99,
-                        "positive": true
-                    }
-                ],
-                "visibility": [
-                    {
-                        "total": 87,
-                        "growth": 3,
-                        "positive": true
-                    }
-                ],
-                "likes": [
-                    {
-                        "total": 52,
-                        "growth": 2,
-                        "positive": false
-                    }
-                ]
+                "total": 1987,
+                "growth": 99,
+                "isGrowthPositive": true
+            }
+        ],
+        "visibility": [
+            {
+                "total": 87,
+                "growth": 3,
+                "isGrowthPositive": true
+            }
+        ],
+        "likes": [
+            {
+                "total": 52,
+                "growth": 2,
+                "isGrowthPositive": false
+            }
+        ]
+    },
+    {
+        "name": "twitter",
+        "identifier": "@nathanf",
+        "followers": [
+            {
+                "total": 5236,
+                "growth": 99,
+                "isGrowthPositive": true
+            }
+        ],
+        "visibility": [
+            {
+                "total": 87,
+                "growth": 3,
+                "isGrowthPositive": true
+            }
+        ],
+        "likes": [
+            {
+                "total": 52,
+                "growth": 2,
+                "isGrowthPositive": false
+            }
+        ]
+    },
+    {
+        "name": "instagram",
+        "identifier": "@nathanf",
+        "followers": [
+            {
+                "total": 11000,
+                "growth": 99,
+                "isGrowthPositive": false
+            }
+        ],
+        "visibility": [
+            {
+                "total": 87,
+                "growth": 3,
+                "isGrowthPositive": true
+            }
+        ],
+        "likes": [
+            {
+                "total": 52,
+                "growth": 2,
+                "isGrowthPositive": false
+            }
+        ]
+    },
+    {
+        "name": "youtube",
+        "identifier": "Nathan F.",
+        "followers": [
+            {
+                "total": 1987,
+                "growth": 99,
+                "isGrowthPositive": true
+            }
+        ],
+        "visibility": [
+            {
+                "total": 87,
+                "growth": 3,
+                "isGrowthPositive": true
+            }
+        ],
+        "likes": [
+            {
+                "total": 52,
+                "growth": 2,
+                "isGrowthPositive": false
             }
         ]
     }

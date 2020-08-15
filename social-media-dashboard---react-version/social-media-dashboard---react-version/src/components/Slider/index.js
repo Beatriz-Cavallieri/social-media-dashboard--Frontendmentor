@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+//------ SliderWrapper styled component 
 const SliderWrapper = styled.label`
     position: relative;
     display: inline-block;
@@ -47,6 +48,9 @@ const SliderWrapper = styled.label`
         box-shadow: 0 0 3px hsl(210, 78%, 56%);
     }
 `
+//------ SliderWrapper styled component 
+
+//------ Slider component
 export default function Slider({ getThemeHeader }) {
     return (
         <SliderWrapper>

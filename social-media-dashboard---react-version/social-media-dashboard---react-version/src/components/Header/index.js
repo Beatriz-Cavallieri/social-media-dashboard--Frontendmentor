@@ -32,7 +32,7 @@ const ColorThemeSelectionWrapper = styled.div`
     }
 `
 export default function Header({ getThemeApp }) {
-    const [totalFollowers, setTotalFollowers] = useState(12005)
+    const totalFollowers = 12005
 
     function numberFormat(number) {
         number = number.toString()

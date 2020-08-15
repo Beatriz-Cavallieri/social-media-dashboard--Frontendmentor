@@ -32,15 +32,34 @@ const TopWrapper = styled.div`
     }
 `
 
-export default function FollowersSubscribersCard() {
+export default function FollowersSubscribersCard({ name, identifier, followers }) {
+    let imageSource
+
+    switch (name) {
+        case 'facebook':
+            imageSource = facebook;
+            break;
+        case 'twitter':
+            imageSource = twitter;
+            break;
+        case 'instagram':
+            imageSource = instagram;
+            break;
+        case 'youtube':
+            imageSource = youtube;
+            break;
+    }
+
     return (
         <div>
             <CardBase>
                 <TopWrapper>
-                    <img src={facebook} />
-                    <Title>@nathanf</Title>
+                    <img src={imageSource} alt={name} />
+                    <Title>{identifier}</Title>
                 </TopWrapper>
-                <BigNumber>786</BigNumber>
+                <BigNumber>
+                    {followers[0].total}
+                </BigNumber>
                 <Sub>followers</Sub>
             </CardBase>
         </div >
