@@ -4,7 +4,7 @@ const data = [
         "identifier": "@nathanf",
         "followers": [
             {
-                "total": 1987,
+                "total": 1937,
                 "growth": 99,
                 "isGrowthPositive": true
             }
@@ -29,7 +29,7 @@ const data = [
         "identifier": "@nathanf",
         "followers": [
             {
-                "total": 5236,
+                "total": 52346,
                 "growth": 31,
                 "isGrowthPositive": true
             }
@@ -79,7 +79,7 @@ const data = [
         "identifier": "Nathan F.",
         "followers": [
             {
-                "total": 1987,
+                "total": 7872,
                 "growth": 25,
                 "isGrowthPositive": false
             }
@@ -101,8 +101,12 @@ const data = [
     }
 ]
 
+// ========================================================================================================
+// ========================================================================================================
+
 const mainCards = document.querySelector('.follow-boxes')
 const dailyCards = document.querySelector('.today-overview')
+const totalFollowersElement = document.querySelector('#total-followers')
 
 // based on solution at https://www.youtube.com/watch?v=ZKXv_ZHQ654
 var checkbox = document.querySelector('input[name=theme]');
@@ -114,12 +118,11 @@ function start() {
     checkbox.addEventListener('change', () => {
         setTheme(document.documentElement.getAttribute('data-theme'))
     });
-
+    updateHeader()
     createCards()
 }
 
 function setTheme(attribute) {
-    console.log(attribute)
     switch (attribute) {
         case "dark":
             document.documentElement.setAttribute('data-theme', 'default');
@@ -132,6 +135,13 @@ function setTheme(attribute) {
     }
 }
 
+function updateHeader() {
+    let totalFollowers = 0
+    data.map(socialNetwork => totalFollowers += socialNetwork.followers[0].total)
+    totalFollowers = numberFormat(totalFollowers, ',')
+    totalFollowersElement.innerHTML = `Total followers: ${totalFollowers}`
+}
+
 function createCards() {
     const mainCardsHTML = createMainCardsHTML(data)
     const dailyCardsHTML = createDailyCardsHTML(data)
@@ -139,15 +149,31 @@ function createCards() {
     dailyCards.innerHTML = dailyCardsHTML
 }
 
-function followersNumberFormat(number) {
-    return (number >= 10000) ? (number / 1000 + 'k') : (number)
+function numberFormat(number, format) {
+    switch (format) {
+        case 'k':
+            return (number >= 10000) ? (parseInt(number / 1000).toString() + 'k') : (number)
+        case ',':
+            number = number.toString()
+            let algarisms = number.length
+            if (algarisms > 3) {
+                let start = number.slice(0, algarisms - 3)
+                let end = ',' + number.slice(algarisms - 3, algarisms + 1)
+                algarisms -= 3
+                number = numberFormat(start, ',') + end
+            }
+            return number
+        default:
+            return number
+    }
 }
 
 function createMainCardsHTML(data) {
     let innerHTML = ''
     data.map(socialNetwork => {
         const name = socialNetwork.name
-        const growthClass = socialNetwork.followers[0].isGrowthPositive ? 'pos' : 'neg'
+        const growthDirection = socialNetwork.followers[0].isGrowthPositive ? 'up' : 'down'
+        const directionIcon = `../../images/icon-${growthDirection}.svg`
         const subtitle = (name === 'youtube') ? 'subscribers' : 'followers'
         innerHTML += `
         <button class="box box-follow ${name}" id="${name}-followers" aria-label="Nathan's ${name} Page">
@@ -156,11 +182,12 @@ function createMainCardsHTML(data) {
                     <h4>${socialNetwork.identifier}</h4>
             </div>
             <p>
-                <span class="number">${followersNumberFormat(socialNetwork.followers[0].total)}</span>
+                <span class="number">${numberFormat(socialNetwork.followers[0].total, 'k')}</span>
                 </br>
                 <span class="under">${subtitle}</span>
                 </br>
-                <span class="today ${growthClass}">${socialNetwork.followers[0].growth} Today</span>
+                <img src="${directionIcon}" class="arrow"/>
+                <span class="today ${growthDirection}">${socialNetwork.followers[0].growth} Today</span>
                 </br>
             </p>
         </button>
@@ -172,8 +199,8 @@ function createMainCardsHTML(data) {
 function createDailyCardsHTML() {
     let innerHTML = ''
     data.map(socialNetwork => {
-        const visibilityGrowthClass = socialNetwork.visibility[0].isGrowthPositive ? 'pos' : 'neg'
-        const likesGrowthClass = socialNetwork.likes[0].isGrowthPositive ? 'pos' : 'neg'
+        const visibilityGrowthClass = socialNetwork.visibility[0].isGrowthPositive ? 'up' : 'down'
+        const likesGrowthClass = socialNetwork.likes[0].isGrowthPositive ? 'up' : 'down'
         innerHTML += `
 			<button class="box box-today">
 				<div class="col-left">
@@ -182,7 +209,7 @@ function createDailyCardsHTML() {
 				</div>
 				<div class="col-right">
 					<img src="../images/icon-${socialNetwork.name}.svg" alt="${socialNetwork.name} icon">
-					<p class="today ${visibilityGrowthClass}">${socialNetwork.visibility[0].growth}%</p>
+					<span class="${visibilityGrowthClass} arrow"></span><p class="today ${visibilityGrowthClass}">${socialNetwork.visibility[0].growth}%</p>
 				</div>
             </button>
             
@@ -192,8 +219,8 @@ function createDailyCardsHTML() {
 					<p class="number">${socialNetwork.likes[0].total}</p>
 				</div>
 				<div class="col-right">
-					<img src="../images/icon-${socialNetwork.name}.svg" alt="${socialNetwork.name} icon">
-					<p class="today ${likesGrowthClass}">${socialNetwork.likes[0].growth}%</p>
+                    <img src="../images/icon-${socialNetwork.name}.svg" alt="${socialNetwork.name} icon">
+                    <p class="today ${likesGrowthClass}">${socialNetwork.likes[0].growth}%</p>
 				</div>
 			</button>
         `

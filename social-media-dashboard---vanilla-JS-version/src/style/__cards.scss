@@ -60,13 +60,18 @@ button.box {
         font-weight: bold;
         font-size: 0.8rem;
     }
-    .pos::before {
+    .up {
         color: $lime-green;
     }
-    .neg {
+    .down{
         color: $bright-red;
     }
 }
+
+img.arrow {
+        width: 10px;
+        height: 10px;
+    }
 
 // main boxes
 .box-follow {
@@ -123,3 +128,10 @@ button.box {
         @include column(right);
     }   
 }
+
+span.arrow::before {
+            content: "";
+            background-image: url('../../../images/icon-down.svg');
+            width: 20px;
+            height: 20px;
+        }

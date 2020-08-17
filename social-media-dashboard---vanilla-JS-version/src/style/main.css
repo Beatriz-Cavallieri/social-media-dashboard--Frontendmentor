@@ -80,12 +80,17 @@ button.box:hover {
   font-size: 0.8rem;
 }
 
-.box .pos {
+.box .up {
   color: #1db489;
 }
 
-.box .neg {
+.box .down {
   color: #dc414c;
+}
+
+img.arrow {
+  width: 10px;
+  height: 10px;
 }
 
 .box-follow.facebook::before {
@@ -229,6 +234,13 @@ button.box:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+span.arrow::before {
+  content: "";
+  background-image: url("../../../images/icon-down.svg");
+  width: 20px;
+  height: 20px;
 }
 
 .switch {
@@ -408,5 +420,10 @@ img {
   height: 16px;
   -ms-flex-item-align: end;
       align-self: flex-end;
+}
+
+img.arrow {
+  width: 8px;
+  height: 8px;
 }
 /*# sourceMappingURL=main.css.map */
