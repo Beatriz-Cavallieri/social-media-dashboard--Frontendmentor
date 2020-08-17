@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import FollowersSubscribersCard from '../Cards/FollowersSubscribersCard'
 import data from '../../data/data.json'
-import { CardsWrapper } from '../Cards/CardsWrapper/CardsWrapper'
 import DailyOverviewCard from '../Cards/DailyOverviewCard'
+import { CardsWrapper } from '../Cards/CardsWrapper/CardsWrapper'
 
 export default class Main extends Component {
     constructor() {
@@ -37,6 +37,9 @@ export default class Main extends Component {
                 <CardsWrapper>
                     {data.map(socialNetwork => <DailyOverviewCard
                         key={socialNetwork.name}
+                        name={socialNetwork.name}
+                        visibility={socialNetwork.visibility[0]}
+                        likes={socialNetwork.likes[0]}
                     />)}
                 </CardsWrapper>
             </div>

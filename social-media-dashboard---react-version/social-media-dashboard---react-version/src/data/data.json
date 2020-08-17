@@ -5,20 +5,20 @@
         "followers": [
             {
                 "total": 1987,
-                "growth": 99,
+                "growth": 9,
                 "isGrowthPositive": true
             }
         ],
         "visibility": [
             {
-                "total": 87,
+                "total": 102,
                 "growth": 3,
                 "isGrowthPositive": true
             }
         ],
         "likes": [
             {
-                "total": 52,
+                "total": 58,
                 "growth": 2,
                 "isGrowthPositive": false
             }
@@ -30,21 +30,21 @@
         "followers": [
             {
                 "total": 5236,
-                "growth": 99,
+                "growth": 12,
                 "isGrowthPositive": true
             }
         ],
         "visibility": [
             {
-                "total": 87,
+                "total": 37,
                 "growth": 3,
-                "isGrowthPositive": true
+                "isGrowthPositive": false
             }
         ],
         "likes": [
             {
-                "total": 52,
-                "growth": 2,
+                "total": 21,
+                "growth": 10,
                 "isGrowthPositive": false
             }
         ]
@@ -61,14 +61,14 @@
         ],
         "visibility": [
             {
-                "total": 87,
+                "total": 74,
                 "growth": 3,
                 "isGrowthPositive": true
             }
         ],
         "likes": [
             {
-                "total": 52,
+                "total": 33,
                 "growth": 2,
                 "isGrowthPositive": false
             }
@@ -93,8 +93,8 @@
         ],
         "likes": [
             {
-                "total": 52,
-                "growth": 2,
+                "total": 48,
+                "growth": 5,
                 "isGrowthPositive": false
             }
         ]
