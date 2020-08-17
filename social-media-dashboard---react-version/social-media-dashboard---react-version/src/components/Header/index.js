@@ -31,14 +31,16 @@ const ColorThemeSelectionWrapper = styled.div`
         }
     }
 `
-export default function Header({ getThemeApp }) {
-    const totalFollowers = 12005
+export default function Header({ getThemeApp, totalFollowers }) {
 
     function numberFormat(number) {
         number = number.toString()
         let algarisms = number.length
         if (algarisms > 3) {
-            number = numberFormat(number.slice(0, algarisms - 3)) + ',' + number.slice(algarisms - 3, algarisms + 1)
+            let start = number.slice(0, algarisms - 3)
+            let end = ',' + number.slice(algarisms - 3, algarisms + 1)
+            algarisms -= 3
+            number = numberFormat(start) + end
         }
         return number
     }

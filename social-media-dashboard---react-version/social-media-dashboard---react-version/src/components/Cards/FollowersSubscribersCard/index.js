@@ -22,7 +22,7 @@ const Sub = styled.p`
     font-size: 12px;
 `
 
-const TopWrapper = styled.div`
+const TitleWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,34 +33,43 @@ const TopWrapper = styled.div`
 `
 
 export default function FollowersSubscribersCard({ name, identifier, followers }) {
-    let imageSource
+    const subtitle = (name === 'youtube') ? 'subscribers' : 'followers'
+    const numberFormat = number => (number >= 10000) ? (parseInt(number / 1000) + 'k') : (number)
+    let imageSource = ''
 
     switch (name) {
         case 'facebook':
-            imageSource = facebook;
-            break;
+            imageSource = facebook
+            break
         case 'twitter':
-            imageSource = twitter;
-            break;
+            imageSource = twitter
+            break
         case 'instagram':
-            imageSource = instagram;
-            break;
+            imageSource = instagram
+            break
         case 'youtube':
-            imageSource = youtube;
-            break;
+            imageSource = youtube
+            break
     }
 
     return (
         <div>
-            <CardBase>
-                <TopWrapper>
-                    <img src={imageSource} alt={name} />
-                    <Title>{identifier}</Title>
-                </TopWrapper>
+            <CardBase socialNetwork={name}>
+                <TitleWrapper>
+                    <img
+                        src={imageSource}
+                        alt={name}
+                    />
+                    <Title>
+                        {identifier}
+                    </Title>
+                </TitleWrapper>
+
                 <BigNumber>
-                    {followers[0].total}
+                    {numberFormat(followers[0].total)}
                 </BigNumber>
-                <Sub>followers</Sub>
+
+                <Sub>{subtitle}</Sub>
             </CardBase>
         </div >
     )

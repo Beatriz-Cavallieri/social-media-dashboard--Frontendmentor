@@ -2,25 +2,28 @@ import React, { Component } from 'react'
 import FollowersSubscribersCard from '../Cards/FollowersSubscribersCard'
 import data from '../../data/data.json'
 import { CardsWrapper } from '../Cards/CardsWrapper/CardsWrapper'
+import DailyOverviewCard from '../Cards/DailyOverviewCard'
 
 export default class Main extends Component {
     constructor() {
         super()
+        this.totalFollowers = 0
     }
 
     componentDidMount() {
         this.loadData()
+        data.map(data => this.totalFollowers += data.followers[0].total)
+        this.props.setTotalFollowers(this.totalFollowers)
     }
 
     loadData = () => {
-        // this is where we should get data from the API, but for now it will be used only the static example from data.json
+        // this is where we should get data from the APIs, but for now it will be used only the example from data.json
     }
 
     render() {
         return (
             <div>
                 <CardsWrapper>
-                    {/* Overview */}
                     {data.map(socialNetwork => <FollowersSubscribersCard
                         key={socialNetwork.name}
                         name={socialNetwork.name}
@@ -28,8 +31,13 @@ export default class Main extends Component {
                         followers={socialNetwork.followers}
                     />)}
                 </CardsWrapper>
+
+                <h2>Overview - Today</h2>
+
                 <CardsWrapper>
-                    {/* This day */}
+                    {data.map(socialNetwork => <DailyOverviewCard
+                        key={socialNetwork.name}
+                    />)}
                 </CardsWrapper>
             </div>
         )

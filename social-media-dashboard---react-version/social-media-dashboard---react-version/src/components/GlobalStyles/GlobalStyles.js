@@ -7,6 +7,12 @@ export const GlobalStyles = createGlobalStyle`
     --toggle-blue: hsl(210, 78%, 56%);
     --toggle-green: hsl(146, 68%, 55%);
     --toggle-gray: hsl(230, 22%, 74%);
+
+    --facebook: hsl(208, 92%, 53%);
+    --twitter: hsl(203, 89%, 53%);
+    --instagram-yellow: hsl(37, 97%, 70%);
+    --instagram-pink: hsl(329, 70%, 58%);
+    --youtube: hsl(348, 97%, 39%);
 }
 
 * {
