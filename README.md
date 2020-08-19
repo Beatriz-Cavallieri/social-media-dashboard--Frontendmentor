@@ -3,3 +3,6 @@ Two approaches to the same coding exercise. One more focused on the layout and u
 
 ## View the challege
 https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H
+
+## View my solution
+https://social-media-dashboard-frontendmentor.vercel.app
