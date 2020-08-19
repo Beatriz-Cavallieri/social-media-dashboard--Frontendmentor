@@ -16,7 +16,6 @@ export const CardsWrapper = styled.div`
 
 /* desktop */
 @media only screen and (min-width: 1024px) {
-
         grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 `

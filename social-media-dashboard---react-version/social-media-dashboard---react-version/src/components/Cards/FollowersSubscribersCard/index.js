@@ -54,7 +54,7 @@ export default function FollowersSubscribersCard({ name, identifier, followers }
 
     return (
         <div>
-            <CardBase socialNetwork={name}>
+            <CardBase className={`with-upper-line ${name}`}>
                 <TitleWrapper>
                     <SocialMediaLogo name={name} />
                     <Title>

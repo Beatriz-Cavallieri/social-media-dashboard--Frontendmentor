@@ -12,6 +12,31 @@ export const CardBase = styled.div`
     padding: 20px 0;
     min-height: 150px;
     background-color: ${({ theme }) => theme.card};
+
+    &.with-upper-line::before {
+        content: "";
+        display: flex;
+        width: 100%;
+        height:4px;
+        position: relative;
+        top: -20px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        background-color: red;
+    }
+    &.facebook::before {
+        background-color: var(--facebook);
+    }
+    &.twitter::before {
+        background-color: var(--twitter);
+    }
+    &.youtube::before {
+        background-color: var(--youtube);
+    }
+    &.instagram::before {
+        background-image: linear-gradient(to left, var(--instagram-pink), var(--instagram-yellow));
+    }
+
     `
 
 export const CardWrapper = styled.div``
