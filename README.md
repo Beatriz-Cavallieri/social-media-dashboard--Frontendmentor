@@ -7,8 +7,11 @@ Posteriormente, quando estava aprendendo ReactJS resolvi refazer, dessa vez util
 ## Principais aprendizados com esse desafio
 
 Ferramentas do Sass, como mixins e importações
+
 Aplicação de temas de cores
+
 Uso de ::before e ::after
+
 Passagem de informação dos filhos para os pais em React
 
 ## Veja o desafio / View the challenge
