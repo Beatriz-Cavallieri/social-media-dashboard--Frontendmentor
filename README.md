@@ -1,8 +1,15 @@
 # social-media-dashboard--Frontendmentor
 
-b(pt-BR) Duas abordagens de um mesmo desafio. Uma utilizando Sass e JavaScript puro, e a outra usando React JS e styled-componenents.
+Esse desafio consiste em fazer a página o mais semelhante possível ao design proposto.
+Fiz uma tentativa inicial apenas em Javascrit e CSS com pré-processador Sass.
+Posteriormente, quando estava aprendendo ReactJS resolvi refazer, dessa vez utilizando essa ferramenta.
 
-(en) Two approaches to the same coding exercise. One more focused on the layout and using only Sass and Javascript, and the second more complete and functional, using this time ReactJS and tools like Styled Components
+## Principais aprendizados com esse desafio
+
+Ferramentas do Sass, como mixins e importações
+Aplicação de temas de cores
+Uso de ::before e ::after
+Passagem de informação dos filhos para os pais em React
 
 ## Veja o desafio / View the challenge
 https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H
