@@ -1,6 +1,6 @@
-// as seen on https://css-tricks.com/a-dark-mode-toggle-with-react-and-themeprovider/
-
 import { createGlobalStyle } from 'styled-components';
+
+import { light, dark } from "../../style/themes";
 
 export const GlobalStyles = createGlobalStyle`
 :root {
@@ -28,7 +28,7 @@ a {
 
 h1 {
     font-size: 24px;
-    color: ${({ theme }) => theme.bigText};
+    color: ${light.bigText};
 }
 
 h2 {
@@ -37,7 +37,7 @@ h2 {
 
 h2, h3, h4
 {
-    color: ${({ theme }) => theme.smallText};
+    color: ${light.smallText};
 }
 
 body {
@@ -46,7 +46,7 @@ body {
     min-height: 100vh;
     width: 100vw;
     padding: 20px 8%;
-    background: ${({ theme }) => theme.background};
+    background: ${light.background};
 }
 
 img {

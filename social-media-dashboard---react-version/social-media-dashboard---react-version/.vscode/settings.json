@@ -1,0 +1,10 @@
+{
+	"files.eol": "\n",
+	"eslint.codeAction.showDocumentation": {
+		"enable": true
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+    },
+    "prettier.tabWidth": 4
+}

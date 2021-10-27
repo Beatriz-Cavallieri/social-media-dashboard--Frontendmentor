@@ -1,73 +1,43 @@
-import React from 'react'
-import { CardBase, CardNumber, Arrow, PositiveGrowthPercentage, NegativeGrowthPercentage } from '../CardBase'
-import styled from 'styled-components'
-import SocialMediaLogo from '../SocialMediaLogo'
-import upArrow from '../../../assets/images/icon-up.svg'
-import downArrow from '../../../assets/images/icon-down.svg'
+// Packages
+import React from "react";
 
-const BigNumber = styled(CardNumber)`
-    font-size: 3rem;
-    letter-spacing: -0.05em;
-`
-const Title = styled.h4`
-    font-size: 12px;
-`
-const Sub = styled.p`
-    color: ${({ theme }) => theme.smallText};
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    margin: 0 0 20px 0;
-    font-size: 12px;
-`
+// Components
+import { Arrow, CardBase, GrowthPercentage } from "../CardBase";
+import { Title, TitleWrapper, Sub, BigNumber } from "./styles";
 
-const TitleWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-        align-self: center;
-        margin-right: 5px;
-    }
-`
+// Assets
+import upArrow from "../../../assets/images/icon-up.svg";
+import downArrow from "../../../assets/images/icon-down.svg";
 
-export default function FollowersSubscribersCard({ name, identifier, followers }) {
-    const subtitle = (name === 'youtube') ? 'subscribers' : 'followers'
-    const numberFormat = number => (number >= 10000) ? (parseInt(number / 1000) + 'k') : (number)
+// Utils
+import { bigNumberFormat } from "../../../utils/utils";
+import { socialNetworkData } from "../utils";
 
-    function renderGrowth(aspect) {
-        if (aspect.isGrowthPositive) {
-            return (
-                <div>
-                    <Arrow as="img" src={upArrow} />
-                    <PositiveGrowthPercentage>{aspect.growth}%</PositiveGrowthPercentage>
-                </div>
-            )
-        } else {
-            return (
-                <div>
-                    <Arrow as="img" src={downArrow} />
-                    <NegativeGrowthPercentage>{aspect.growth}%</NegativeGrowthPercentage>
-                </div>
-            )
-        }
-    }
+// ----------------- Component -----------------------
+
+function FollowersSubscribersCard({ name, identifier, followers }) {
+    const subtitle = socialNetworkData[name].subtitle;
+
+    const { isGrowthPositive, total, growth } = followers[0];
 
     return (
         <div>
             <CardBase className={`with-upper-line ${name}`}>
                 <TitleWrapper>
-                    <SocialMediaLogo name={name} />
-                    <Title>
-                        {identifier}
-                    </Title>
+                    <img src={socialNetworkData[name].imageSource} alt={name} />
+                    <Title>{identifier}</Title>
                 </TitleWrapper>
 
-                <BigNumber>
-                    {numberFormat(followers[0].total)}
-                </BigNumber>
+                <BigNumber>{bigNumberFormat(total)}</BigNumber>
                 <Sub>{subtitle}</Sub>
-                {renderGrowth(followers[0])}
+                <Arrow as="img" src={isGrowthPositive ? upArrow : downArrow} />
+
+                <GrowthPercentage isPositive={isGrowthPositive}>
+                    {growth}%
+                </GrowthPercentage>
             </CardBase>
-        </div >
-    )
+        </div>
+    );
 }
+
+export default FollowersSubscribersCard;

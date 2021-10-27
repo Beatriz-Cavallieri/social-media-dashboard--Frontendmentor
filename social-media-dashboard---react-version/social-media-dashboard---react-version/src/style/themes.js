@@ -1,4 +1,4 @@
-export const lightTheme = {
+export const light = {
     backgroundDetail: 'hsl(225, 100%, 98%)',
     background: 'hsl(0, 0%, 100%)',
     card: 'hsl(227, 47%, 96%)',
@@ -7,7 +7,7 @@ export const lightTheme = {
     bigText: 'hsl(230, 17%, 14%)',
 }
 
-export const darkTheme = {
+export const dark = {
     backgroundDetail: 'hsl(232, 19%, 15%)',
     background: 'hsl(230, 17%, 14%)',
     card: 'hsl(228, 28%, 20%)',
