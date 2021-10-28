@@ -1,29 +1,37 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+// Components
 import FollowersSubscribersCard from "../Cards/FollowersSubscribersCard";
-import data from "../../data/data.json";
 import DailyOverviewCard from "../Cards/DailyOverviewCard";
 import { CardsWrapper } from "../Cards/CardsWrapper/CardsWrapper";
+// Mock data
+import mockData from "../../data/data.json";
 
-export default class Main extends Component {
-    constructor() {
-        super();
-        this.totalFollowers = 0;
-    }
+function Main(props) {
+    const [data, setData] = useState();
 
-    componentDidMount() {
-        this.loadData();
-        data.map((data) => (this.totalFollowers += data.followers[0].total));
-        this.props.setTotalFollowers(this.totalFollowers);
-    }
+    useEffect(() => {
+        async function getData() {
+            async function loadData() {
+                // this is where we should get data from the APIs, but for now it will be used only the example from data.json
+                return mockData;
+            }
+            const loadedData = await loadData();
 
-    loadData = () => {
-        // this is where we should get data from the APIs, but for now it will be used only the example from data.json
-    };
+            const followersReducer = (previousValue, currentData) =>
+                previousValue + currentData.followers[0].total;
 
-    render() {
-        return (
-            <div>
-                <CardsWrapper>
+            const totalFollowers = loadedData.reduce(followersReducer);
+
+            props.setTotalFollowers(totalFollowers);
+            setData(loadedData);
+        }
+        getData();
+    }, []);
+
+    const renderFollowersSubscribers = useCallback(() => {
+        if (data)
+            return (
+                <>
                     {data.map((socialNetwork) => (
                         <FollowersSubscribersCard
                             key={socialNetwork.name}
@@ -32,11 +40,14 @@ export default class Main extends Component {
                             followers={socialNetwork.followers}
                         />
                     ))}
-                </CardsWrapper>
+                </>
+            );
+    }, [data]);
 
-                <h2>Overview - Today</h2>
-
-                <CardsWrapper>
+    const renderDailyOverview = useCallback(() => {
+        if (data)
+            return (
+                <>
                     {data.map((socialNetwork) => (
                         <DailyOverviewCard
                             key={socialNetwork.name}
@@ -45,8 +56,19 @@ export default class Main extends Component {
                             likes={socialNetwork.likes[0]}
                         />
                     ))}
-                </CardsWrapper>
-            </div>
-        );
-    }
+                </>
+            );
+    }, [data]);
+
+    return (
+        <div>
+            <CardsWrapper>{renderFollowersSubscribers()}</CardsWrapper>
+
+            <h2>Overview - Today</h2>
+
+            <CardsWrapper>{renderDailyOverview()}</CardsWrapper>
+        </div>
+    );
 }
+
+export default Main;

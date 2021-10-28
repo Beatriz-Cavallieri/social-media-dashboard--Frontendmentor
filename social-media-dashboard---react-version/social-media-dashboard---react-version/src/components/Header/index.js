@@ -5,7 +5,7 @@ import Slider from "../Slider";
 import { ColorThemeSelectionWrapper, TitleWrapper } from "./styles";
 
 // Utils
-import { numberFormat } from "../../utils/utils";
+import { numberFormat } from "../../utils/functions";
 
 function Header({ totalFollowers }) {
     return (

@@ -10,7 +10,7 @@ import upArrow from "../../../assets/images/icon-up.svg";
 import downArrow from "../../../assets/images/icon-down.svg";
 
 // Utils
-import { bigNumberFormat } from "../../../utils/utils";
+import { bigNumberFormat } from "../../../utils/functions";
 import { socialNetworkData } from "../utils";
 
 // ----------------- Component -----------------------

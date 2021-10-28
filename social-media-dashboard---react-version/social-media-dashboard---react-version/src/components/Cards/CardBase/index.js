@@ -63,5 +63,6 @@ export const GrowthPercentage = styled.p`
     margin: 0;
     padding: 0;
     display: inline;
-    color: ${props => props.isPositive ? "hsl(163, 72%, 41%)" : "hsl(356, 69%, 56%)"};
+    color: ${(props) =>
+        props.isPositive ? "hsl(163, 72%, 41%)" : "hsl(356, 69%, 56%)"};
 `;
