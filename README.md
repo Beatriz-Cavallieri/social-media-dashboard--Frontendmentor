@@ -3,16 +3,14 @@
 Esse desafio consiste em fazer a página o mais semelhante possível ao design proposto.
 Fiz uma tentativa inicial apenas em Javascrit e CSS com pré-processador Sass.
 Posteriormente, quando estava aprendendo ReactJS resolvi refazer, dessa vez utilizando essa ferramenta.
+Por fim, após um período trabalhando profissionalmente com ReactJS, estou refatorando o código para melhorá-lo de acordo com meus aprendizados práticos.
 
-## Principais aprendizados com esse desafio
+## Principais conceitos e ferramentas trabalhados nesse desafio
 
-Ferramentas do Sass, como mixins e importações
+- Primeira versão: SASS e vanilla JS
+- Segunda versão: React, styled-components
+- Terceira versão (em andamento): arquitetura de pastas, módulos CSS, context API, nomenclatura BEM para classes CSS
 
-Aplicação de temas de cores
-
-Uso de ::before e ::after
-
-Passagem de informação dos filhos para os pais em React
 
 ## Veja o desafio / View the challenge
 https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H
