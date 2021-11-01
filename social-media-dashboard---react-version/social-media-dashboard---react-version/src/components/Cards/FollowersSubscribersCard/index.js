@@ -1,17 +1,12 @@
 // Packages
 import React from "react";
-
 // Components
-import { Arrow, CardBase, GrowthPercentage } from "../CardBase";
-import { Title, TitleWrapper, Sub, BigNumber } from "./styles";
-
-// Assets
-import upArrow from "../../../assets/images/icon-up.svg";
-import downArrow from "../../../assets/images/icon-down.svg";
-
+import GrowthPercentage from "../parts/GrowthPercentage";
 // Utils
 import { bigNumberFormat } from "../../../utils/functions";
 import { socialNetworkData } from "../utils";
+// Styles
+import styles from "./styles.module.scss";
 
 // ----------------- Component -----------------------
 
@@ -21,21 +16,17 @@ function FollowersSubscribersCard({ name, identifier, followers }) {
     const { isGrowthPositive, total, growth } = followers[0];
 
     return (
-        <div>
-            <CardBase className={`with-upper-line ${name}`}>
-                <TitleWrapper>
-                    <img src={socialNetworkData[name].imageSource} alt={name} />
-                    <Title>{identifier}</Title>
-                </TitleWrapper>
+        <div className={`with-upper-line ${name} ${styles.card}`}>
+            <div className={styles.card__title}>
+                <img src={socialNetworkData[name].imageSource} alt={name} />
+                <h4>{identifier}</h4>
+            </div>
 
-                <BigNumber>{bigNumberFormat(total)}</BigNumber>
-                <Sub>{subtitle}</Sub>
-                <Arrow as="img" src={isGrowthPositive ? upArrow : downArrow} />
-
-                <GrowthPercentage isPositive={isGrowthPositive}>
-                    {growth}%
-                </GrowthPercentage>
-            </CardBase>
+            <span className={styles.card__mainNumber_number}>
+                {bigNumberFormat(total)}
+            </span>
+            <p className={styles.card__mainNumber_label}>{subtitle}</p>
+            <GrowthPercentage isPositive={isGrowthPositive} value={growth} />
         </div>
     );
 }

@@ -1,0 +1,28 @@
+.percentage {
+    display: flex;
+    align-items: center;
+}
+
+.percentage__arrow {
+    width: 8px;
+    height: 8px;
+    margin: auto 0;
+    & + p {
+        margin-left: 4px;
+    }
+}
+
+.percentage__number {
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0;
+}
+
+.percentage__number--positive {
+    color: hsl(163, 72%, 41%);
+}
+
+.percentage__number--negative {
+    color: hsl(356, 69%, 56%);
+}

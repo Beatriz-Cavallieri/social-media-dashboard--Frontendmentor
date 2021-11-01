@@ -1,8 +1,9 @@
 import React from "react";
 
-import { SliderWrapper } from "./styles";
+// Styles
+import styles from "./styles.module.scss";
 
-//------ Slider component
+// ------ Slider component
 function Slider({ initialValue, onChange }) {
     const [checked, setChecked] = React.useState(initialValue ?? false);
 
@@ -11,13 +12,13 @@ function Slider({ initialValue, onChange }) {
         setChecked(value);
         if (onChange) onChange(value);
     };
-    
+
     // Render
     return (
-        <SliderWrapper>
+        <label className={styles.toggle}>
             <input type="checkbox" checked={checked} onChange={handleChange} />
             <span></span>
-        </SliderWrapper>
+        </label>
     );
 }
 

@@ -2,9 +2,10 @@ import React, { useState, useEffect, useCallback } from "react";
 // Components
 import FollowersSubscribersCard from "../Cards/FollowersSubscribersCard";
 import DailyOverviewCard from "../Cards/DailyOverviewCard";
-import { CardsWrapper } from "../Cards/CardsWrapper/CardsWrapper";
 // Mock data
 import mockData from "../../data/data.json";
+// Styles
+import styles from "./styles.module.scss";
 
 function Main(props) {
     const [data, setData] = useState();
@@ -62,11 +63,13 @@ function Main(props) {
 
     return (
         <div>
-            <CardsWrapper>{renderFollowersSubscribers()}</CardsWrapper>
+            <div className={styles.cardContainer}>
+                {renderFollowersSubscribers()}
+            </div>
 
             <h2>Overview - Today</h2>
 
-            <CardsWrapper>{renderDailyOverview()}</CardsWrapper>
+            <div className={styles.cardContainer}>{renderDailyOverview()}</div>
         </div>
     );
 }
