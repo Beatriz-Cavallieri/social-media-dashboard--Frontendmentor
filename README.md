@@ -6,7 +6,7 @@ At first I executed the challenge using Javascript and CSS with SASS pre process
 
 Later, when learning ReactJS, I created a new version to practice the use of the framework and the styled-components library.
 
-Currently I am refactoring the React version to correct begginer mistakes, perform improvements learned with the professional practive and using different tools, like CSS modules, the React Context API, BEM naming for CSS classes, and maybe the Typescript language.
+Currently I am refactoring the React version to correct begginer mistakes, perform improvements learned with the professional practice and using different tools, like CSS modules, the React Context API, BEM naming for CSS classes, and maybe the Typescript language.
 
 # PT-BR
 
